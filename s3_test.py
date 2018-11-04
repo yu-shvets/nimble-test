@@ -26,3 +26,8 @@ def get_file(bucket_name, file_name):
         s3_client.download_file(bucket_name, file_name, 'downloads/{}'.format(file_name))
     except ClientError:
         print('File not found')
+
+
+if __name__ == '__main__':
+    put_file(bucket_name=BUCKET_NAME, file_name=FILE_NAME)
+    get_file(bucket_name=BUCKET_NAME, file_name=FILE_NAME)
